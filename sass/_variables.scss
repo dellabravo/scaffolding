@@ -22,9 +22,9 @@ $fs-1: strip-unit($base-font-size) + 0rem;
 	## Container width ##
 */
 
-//** Number of columns in the grid.
-$grid-columns:              8;
-$grid-gutter-width:         30px;
+/** Number of columns in the grid. **/
+$grid-columns:              12;
+$grid-gutter-width:         20;
 //** Padding between columns. Gets divided in half for the left and right.
 $fdl-page-width: 1250px + $grid-gutter-width; 
 
@@ -32,12 +32,22 @@ $fdl-page-width: 1250px + $grid-gutter-width;
 /*
  ## colors ##
 */ 
-$main-bg: #f3f3f3;
 
 $white: #fff;
 $black: #000;
 $fb-blue: #3A5796;
 $twitter-blue: #55acee;
+
+$green: #42715D;
+$lt-green: #4A886E;
+$yellow: #42715D;
+$lt-yellow: #CEA146;
+$lter-yellow: #FFF2A3;
+$ltest-yellow: #F9D812;
+$purple: #864F7B;
+$lt-purple: #8B5981;
+$blue: #124E6A;
+
 
 
 /*
@@ -56,6 +66,8 @@ $screen-xxl: 2500px;
 /*
 	## grid overrides ##
 */
+$container-desktop:            ((920px + $grid-gutter-width));
+
 /*
  ## Custom grid : based on bootstrap grid##
 */
