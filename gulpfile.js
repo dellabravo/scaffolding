@@ -5,6 +5,11 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var prefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
+var rename = require("gulp-rename");
+
+// Build JS dependencies
+var plugins     = require('gulp-load-plugins')({ camelize: true });
+var plumber     = require('gulp-plumber');
 
 // This is an object which defines paths for the styles.
 // Can add paths for javascript or images for example
@@ -15,6 +20,11 @@ var paths = {
         src: './sass',
         files: './sass/**/*.scss',
         dest: './css'
+    },
+    scripts: {
+        src: './js-src',
+        minFileRaw: 'app.min.js',
+        dest: './js'
     }
 
 }
@@ -60,8 +70,21 @@ gulp.task('sass', function (){
     ))
     //minify
     .pipe(minifyCSS())
+    //rename
+    .pipe(rename("app.min.css"))
     // Funally put the compiled sass into a css file
     .pipe(gulp.dest(paths.styles.dest))
+});
+
+gulp.task('js-build', function() {
+  gulp.src([           
+          paths.scripts.src + '/app.js',
+   ])
+    .pipe(plumber()) // prevent pipe from breaking on error.
+    .pipe(plugins.uglify())
+    .pipe(plugins.concat("app.min.js"))
+    .pipe(plugins.rename(paths.scripts.minFileRaw))
+    .pipe(gulp.dest(paths.scripts.dest))
 });
 
 // This is the default task - which is run when `gulp` is run
