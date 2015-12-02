@@ -1,5 +1,3 @@
-# CAPACD
-
 To set up on local dev:
 
 $ npm install
