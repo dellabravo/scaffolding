@@ -5,32 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/app.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="bower_components/remodal/dist/remodal.css">
+    
   </head>
   <body>
     <div class="panel bg-white">
       <div class="container"><div class="row">
         <div id="header"></div>
         <h1>Della's Scaffold</h1>
-        <p><a href="#">Blar de blar</a> Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        <p><a href="#modal">Blar de blar</a> Donec sed odio dui. Aenean lacinia bibendum nulla sed consectetur. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.
         </p>
         <p>
-        Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas sed diam eget risus varius blandit sit amet non magna.
+        <a href="#modal" class="demo">Modal</a>
         </p>
-        <div class="desktop">
-          <div class="col-sm-6">
-            <div class="tile bg-green">
-              <h2>Sustainable Homeownership</h2>
-            </div>
-            <div class="tile bg-yellow">
-              <h2>Sustainable Homeownership</h2>
-            </div>
-          </div>          
+        
+
+
         </div>
-      </div></div>
     </div>
 
 
+    <div class="remodal" data-remodal-id="modal">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <h1>Remodal</h1>
+      <p>
+        Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+      </p>
+      <br>
+      <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+      <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="bower_components/bootstrap-sass/javascripts/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bower_components/remodal/dist/remodal-default-theme.css">
+    <script src="bower_components/remodal/dist/remodal.min.js"></script>
+    <script src="/js-src/app.js"></script>
   </body>
 </html>
